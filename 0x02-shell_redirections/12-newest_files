@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | head | sort | cat
+ls -lt | head -10
