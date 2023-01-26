@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Display "Best School" 10x using until ... while
 name="Best School"
-i=0
+i=1
 until [ $i -gt 10 ]
 do
 	echo "$name"
