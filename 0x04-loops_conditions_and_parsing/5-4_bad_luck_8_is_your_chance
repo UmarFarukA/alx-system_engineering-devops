@@ -3,7 +3,7 @@
 best="Best School"
 bad="bad luck"
 good="good luck"
-i=1
+i=0
 while [ $i -lt 10 ]
 do
 	if [ $i -eq 4 ]
