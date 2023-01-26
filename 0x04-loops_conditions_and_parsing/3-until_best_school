@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Display "Best School" 10x using until ... while
+name="Best School"
+i=0
+until [ $i -gt 10 ]
+do
+	echo "$name"
+	i=$((i+1))
+done

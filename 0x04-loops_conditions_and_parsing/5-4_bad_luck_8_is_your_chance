@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Display Best School and other words base on the number 1-10
+best="Best School"
+bad="bad luck"
+good="good luck"
+i=1
+while [ $i -lt 10 ]
+do
+	if [ $i -eq 4 ]
+	then
+		echo "$bad"
+	elif [ $i -eq 8 ]
+	then
+		echo "$good"
+	else
+		echo "$best"
+	fi
+	i=$((i+1))
+done

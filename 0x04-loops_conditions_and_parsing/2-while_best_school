@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This also prints "Best School" 10x using while loop
+name="Best School"
+i="0"
+while [ $i -lt 10 ]
+do
+echo "$name"
+i=$((i+1))
+done
