@@ -1,5 +1,5 @@
-# - create a file in /tmp
-file { '/tmp':
+#create a file in /tmp
+file {'/tmp':
   ensure  => 'present',
   content => 'I love Puppet',
   group   => 'www-data',
