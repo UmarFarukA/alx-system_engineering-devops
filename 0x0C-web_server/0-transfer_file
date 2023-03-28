@@ -1,4 +1,4 @@
-#!/usr/bin/evn bash
+#!/usr/bin/env bash
 # Transfer files from client machine to server
 
 if [ "$#" -lt 4 ]
