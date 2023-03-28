@@ -1,22 +1,25 @@
 #!/usr/bin/env bash
-# Install Nginx
+# Configures an Nginx server so that /redirect_me redirects to another page.
+# The redirection is configured as a "301 Moved Permanently"
 
-apt-get update
-apt-get install -y nginx
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
-echo "Hello world" > /etc/nginx/html/index.html
+sudo chown -R "$USER":"$USER" /var/www/html
+sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/default
 
-printf %s "server {
+touch /var/www/html/index.html
+echo 'Hello World!' > /var/www/html/index.html
+
+echo "server {
      listen      80 default_server;
      listen      [::]:80 default_server;
-     root        /etc/nginx/html;
+     root        /var/www/html;
      index       index.html index.htm;
-
      location /redirect_me {
-     	 return 301 http://facebook.com/;
-     }
-}
-" > /etc/nginx/sites-available/default
-service nginx restart
+        return 301 https://www.youtube.com/watch?v=u72H_zZzkcw;
+    }
+}" > /etc/nginx/sites-available/default
+
+sudo service nginx restart

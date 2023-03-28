@@ -1,7 +1,7 @@
 #!/usr/bin/evn bash
 # Transfer files from client machine to server
 
-if [ $# -lt 4 ]
+if [ "$#" -lt 4 ]
 then
   echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
