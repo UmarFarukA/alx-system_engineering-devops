@@ -14,4 +14,4 @@ if __name__ == "__main__":
                  if todo.get('completed') is True]
     print("Employee {} is done with tasks({}/{}):"
           .format(user.get('name'), len(completed), len(todos)))
-    [print("\t {}".format(title) for title in completed)]
+    [print("\t {}".format(title)) for title in completed]
