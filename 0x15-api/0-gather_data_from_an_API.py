@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """A scripts that fetches user data"""
 import requests
 import sys
