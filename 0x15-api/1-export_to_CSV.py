@@ -13,7 +13,7 @@ if __name__ == "__main__":
     user = requests.get(userUrl).json()
     userId = user.get("id")
     userName = user.get("username")
-    with open("{}.csv".format(sys.argv[1]), "w") as fw:
+    with open("{}.csv".format(sys.argv[1]), "w", newline="") as fw:
         writer = csv.writer(fw, qouting=csv.QOUTE_ALL)
         [writer.writerow([userId, userName, todo.get("completed"),
                              todo.get("title")]) for todo in todos]
