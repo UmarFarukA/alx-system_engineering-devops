@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """A script that load data to csv file"""
-import requests
-import sys
 import csv
+import sys
+import requests
 
 
 if __name__ == "__main__":
@@ -11,10 +11,10 @@ if __name__ == "__main__":
     todosUrl = url + "todos"
     todos = requests.get(todosUrl, params={"userId": sys.argv[1]}).json()
     user = requests.get(userUrl).json()
+    userId = user.get("id")
+    userName = user.get("username")
     with open("{}.csv".format(sys.argv[1]), "w") as fw:
-        userId = user.get("id")
-        userName = user.get("username")
         for todo in todos:
             writer = csv.writer(fw, qouting=csv.QOUTE_ALL)
             writer.writerow([userId, userName, todo.get("completed"),
-                              todo.get("title")])
+                             todo.get("title")])
