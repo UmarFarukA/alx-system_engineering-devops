@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """A script that load data to csv file"""
 import csv
-import sys
 import requests
+import sys
 
 
 if __name__ == "__main__":
@@ -14,7 +14,6 @@ if __name__ == "__main__":
     userId = user.get("id")
     userName = user.get("username")
     with open("{}.csv".format(sys.argv[1]), "w") as fw:
-        for todo in todos:
-            writer = csv.writer(fw, qouting=csv.QOUTE_ALL)
-            writer.writerow([userId, userName, todo.get("completed"),
-                             todo.get("title")])
+        writer = csv.writer(fw, qouting=csv.QOUTE_ALL)
+        [writer.writerow([userId, userName, todo.get("completed"),
+                             todo.get("title")]) for todo in todos]
