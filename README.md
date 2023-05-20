@@ -1,1 +1,1 @@
-This project is about Regular Expression
+This repo teaches students concept of devOps.
